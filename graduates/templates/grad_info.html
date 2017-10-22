@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<title>{{graduate.first_name}} {{graduate.last_name}}</title>
+<link rel="stylesheet" href="{% static 'css/grad_info.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="section container-fluid" id="alumniInfo">
+    <div class="row justify-content-center">
+        <div class="col-sm-4 infoCol" id="pictureCol">
+            <img id="alumniPicture" src="{{graduate.profile_picture.url}}">
+        </div>
+        <div class="col-sm-6 infoCol" id="bilgiCol">
+            <h1>{{graduate.first_name}} {{graduate.last_name}}</h1>
+            <p>{{graduate.year_greaduated}} Mezunu</p>
+            <p>{{graduate.summary}}</p>
+            <p>{{grduate.university}} | {{graduate.department}}</p>
+        </div>
+    </div>
+</div>
+<div class="section container-fluid" id="messages">
+    <div class="row justify-content-center">
+        {% for message in messages %}
+        <div class="col-8 messageContainer">
+            <div class="messageCard">
+                <h3>{{message.yazan}}</h3>
+                <p>{{message.mesaj}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="section container-fluid" id="postMessage">
+    <form action="{% url 'grad_bilgi' graduate.id %}">
+        {{form.as_p}}
+        <input type="submit" id="submitMessage">
+        <input type="hidden" value="{{next}}">
+    </form>
+</div>
+{% endblock %}

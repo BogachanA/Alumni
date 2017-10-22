@@ -1,0 +1,43 @@
+:root{
+	--redd:rgb(208, 42, 40);
+	--tan:rgb(237, 153, 80);
+}
+
+nav{
+	background-color: var(--redd);
+}
+.navbar-brand img{
+	width: 80px;
+	height: 90px;
+}
+.nav-item{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#graduateListSection{
+	background-color: var(--tan);
+}
+.graduateCardCol{
+	padding: 15px;
+}
+.graduateCard{
+	border: 2px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+	text-align: center;
+	box-shadow: 0 0 15px 3px rgba(0,0,0,0.2);
+	transition: all 0.4s;
+	background: rgba(208,42,40,0.7);
+}
+.graduateCard:hover{
+	box-shadow: 0 0 20px 6px rgba(0,0,0,0.4);
+	transform: scale(1.03);
+}
+.graduateImg{
+	width: 100%;
+	height: 250px;
+}
+.alumniName{
+	margin: 10px auto;
+}
