@@ -30,15 +30,28 @@ class Alumni(AbstractUser):
         return "%s %s" % (self.first_name,self.last_name)
 
 
+def club_icon_upload_path(instance,filename):
+    return '/'.join(['Club_icons', str(instance.id), filename])
+
+
 class Club(models.Model):
     name = models.CharField(max_length=300)
-    members = models.ManyToManyField(Alumni)
+    members = models.ManyToManyField(Alumni,blank=True)
+    description = models.TextField(max_length=1000)
+    club_icon = models.ImageField(upload_to=club_icon_upload_path,default='no-icon.png')
 
     def __str__(self):
         return "%s" % self.name
 
 
 class Message(models.Model):
-    yazan = models.CharField(max_length=200)
-    to = models.ForeignKey(Alumni)
+    yazan = models.ForeignKey(Alumni)
+    chat_room = models.ForeignKey(Club)
     mesaj = models.TextField(max_length=440)
+
+    def __str__(self):
+        return "%s" % self.mesaj
+
+
+class ReplyMessage(Message):
+    main = models.ForeignKey(Message,related_name='yanıt')

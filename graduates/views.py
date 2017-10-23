@@ -33,3 +33,22 @@ def graduateInfo(request,id):
         'messages':all_messages,
     }
     return render(request,'grad_info.html',context)
+
+
+def clubs(request):
+    clubsList = Club.objects.all()
+    context = {
+        'clubs':clubsList,
+    }
+    return render(request,'clubs.html',context)
+
+
+def clubPage(request,clubId):
+    club=get_object_or_404(Club,id=clubId)
+    messages=Message.objects.filter(chat_room=club)
+    messages_not_replies= [m for m in messages if not hasattr(m,'replymessage')]
+    context={
+        'club':club,
+        'messages':messages_not_replies,
+    }
+    return render(request,'club_page.html',context)

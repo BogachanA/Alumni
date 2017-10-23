@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <title>Tüm Kulüpler</title>
+    <link rel="stylesheet" href="{% static 'css/clubs.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container-fluid" id="allContainer">
+        <h1 class="coolTitle" id="clubsTitle">Kulüpler ve Topluluklar</h1>
+        <div class="row justify-content-center row-eq-height" id="clubRow">
+        {% for club in clubs %}
+            <div class="col-10 col-sm-6 col-md-3 clubCol">
+                <a href="{% url 'club_info' club.id %}" class="cardLink">
+                    <div class="clubCard">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="{{ club.club_icon.url }}" class="clubImg">
+                            </div>
+                            <div class="col-8">
+                                <h4 class="clubTitle">{{ club.name }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor%}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}

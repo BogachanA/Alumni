@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -127,3 +128,6 @@ MEDIA_URL = "/media/"
 
 # Custom user model
 AUTH_USER_MODEL = 'graduates.Alumni'
+
+# Registration redux settings
+ACCOUNT_ACTIVATION_DAYS=7

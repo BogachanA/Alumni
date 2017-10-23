@@ -3,12 +3,22 @@
 	--tan:rgb(237, 153, 80);
 }
 
+.row{
+	margin: 0;
+}
+.container-fluid{
+	margin: 0;
+	padding:0;
+	width:100%;
+}
+
 nav{
 	background-color: var(--redd);
 }
 .navbar-brand img{
 	width: 80px;
 	height: 90px;
+	transition: all 0.5s;
 }
 .nav-item{
 	font-size: 20px;
@@ -22,11 +32,11 @@ nav{
 	padding: 15px;
 }
 .graduateCard{
-	border: 2px solid black;
+	border: 2px solid rgba(0,0,0,0.4);
 	border-radius: 10px;
 	overflow: hidden;
 	text-align: center;
-	box-shadow: 0 0 15px 3px rgba(0,0,0,0.2);
+	box-shadow: 0 0 15px 3px rgba(28, 28, 28, 0.2);
 	transition: all 0.4s;
 	background: rgba(208,42,40,0.7);
 }
@@ -41,3 +51,16 @@ nav{
 .alumniName{
 	margin: 10px auto;
 }
+.coolTitle{
+	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: url(../img/seamless-texture.jpg);
+    background-position: 0% 65%;
+    color: #ee9022;
+    font-family: 'Fredericka The Great', sans-serif;
+    padding: 20px;
+    border-bottom: 2px solid rgb(239, 121, 73);
+    margin-bottom: 20px;
+    font-size:50px;
+}
+

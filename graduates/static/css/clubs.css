@@ -1,0 +1,71 @@
+#allContainer{
+    background: var(--tan);
+    padding-top: 140px;
+    position: relative;
+    z-index:5;
+}
+#clubsTitle {
+
+}
+.clubCol{
+    padding: 15px;
+}
+.clubCard{
+    background: rgba(139, 69, 19, 0.9);
+    padding: 10px;
+    position: relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-family:'Cinzel',sans-serif;
+    transition: all 0.4s;
+}
+.clubCard:hover{
+}
+.clubCard:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: var(--redd);
+    border-radius: 10px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+.clubCard:hover:before{
+    -webkit-transform:scale(1.05) rotate(5deg);
+    -moz-transform:scale(1.05) rotate(5deg);
+    -ms-transform:scale(1.05) rotate(5deg);
+    transform:scale(1.05) rotate(5deg);
+    -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+}
+.clubImg{
+    width: 60px;
+    height: 60px;
+}
+#clubRow > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+.cardLink{
+    text-display: none;
+    color: #000;
+}
+.cardLink:hover{
+    text-decoration: none;
+    color: var(--tan);
+}

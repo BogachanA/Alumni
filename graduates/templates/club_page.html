@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <title>{{ club.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/club_info.css' %}">
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid" id="allContainer">
+    <h1 class="coolTitle" id="clubTitle">{{ club.name }}</h1>
+    <div class="row justify-content-center" id="clubInfoRow">
+        <div class="col-10 col-sm-3" id="clubIconCol">
+            <div class="ratio">
+                <img class="clubIcon" src="{{ club.club_icon.url }}">
+            </div>
+        </div>
+        <div class="col-10 col-sm-7" id="infoCol">
+            <h6 id="clubDesc">{{ club.description|safe }}</h6>
+        </div>
+    </div>
+    <h3 class="coolTitle" id="messageTitle">Mesajlar</h3>
+    <div class="row justify-content-center" id="messagesCol">
+        {% for message in messages %}
+            <div class="col-10 messageCol">
+                <div class="messageCard">
+                    <img class="writerImg" src="{{ message.yazan.profile_picture }}">
+                    <p class="messageWriter">
+                        {% if message.yazan.first_name %}
+                            {{ message.yazan.first_name }} {{ message.yazan.last_name }}
+                        {% else %}
+                            {{ message.yazan.username }}
+                        {% endif %}
+                    </p>
+                    <p class="message">{{ message.mesaj }}</p>
+                    <p class="replyButton">Yanıtla</p>
+                </div>
+            </div>
+            {% for reply in message.replymessage_set.all %}
+                <div class="col-8 messageCol replyCol">
+                    <div class="messageCard replyCard">
+                        <img class="writerImg" src="{{ message.yazan.profile_picture }}">
+                        <p class="messageWriter">
+                            {% if message.yazan.first_name %}
+                                {{ message.yazan.first_name }} {{ message.yazan.last_name }}
+                            {% else %}
+                                {{ message.yazan.username }}
+                            {% endif %}
+                        </p>
+                        <p class="message">{{ message.mesaj|safe }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}

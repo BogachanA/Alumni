@@ -1,0 +1,38 @@
+#allContainer{
+    padding-top: 120px;
+    background: var(--tan);
+}
+#clubTitle{
+    text-align: center;
+    background-position: 1% 53%;
+}
+#clubIconCol{
+    padding:10px;
+}
+.ratio{
+    width: 100%;
+    padding-top:100%;
+}
+.clubIcon{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+}
+#clubDesc{
+    font-family:'Cinzel',sans-serif;
+    font-size:17px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+@media(max-width: 767px){
+    #clubDesc{
+        font-size:13px;
+    }
+}
