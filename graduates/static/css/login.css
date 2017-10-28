@@ -1,0 +1,31 @@
+#loginContainer{
+    background: var(--tan);
+    padding-top:100px;
+}
+#logoCol{
+    padding: 20px;
+}
+#logo{
+    width: 100%;
+}
+#loginTitle{
+    font-size: 30px;
+}
+#loginPane{
+    background: rgba(255,89,0,0.4);
+    border:2px solid var(--redd);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    margin:40px auto;
+}
+.input-group{
+    margin:15px auto;
+}
+.input-group-addon{
+    color: var(--tan);
+    background: var(--redd);
+}
+input{
+    background: hsla(1, 68%, 49%, 0.5);
+}

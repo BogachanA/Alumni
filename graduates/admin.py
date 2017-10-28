@@ -30,7 +30,7 @@ class MessageAdmin(admin.ModelAdmin):
 
 
 class ReplyAdmin(admin.ModelAdmin):
-    list_display = ('chat_room','yazan','main','mesaj')
+    list_display = ('chat_room','yazan','mesaj','main',)
 
 
 admin.site.register(Alumni,GraduateAdmin)

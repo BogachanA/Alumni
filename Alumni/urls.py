@@ -17,8 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from Alumni import views
 
 urlpatterns = [
+    url(r'^$',views.mainRedirect,name='ana'),
     url(r'^admin/', admin.site.urls),
     url(r'^mezunlar/',include('graduates.urls'),name='fenlisesi'),
     url(r'^accounts/', include('registration.backends.default.urls')),

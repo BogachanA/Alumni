@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'graduates',
     'django.contrib.admin',
     'registration',
     'django.contrib.auth',
@@ -38,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'graduates',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +131,6 @@ AUTH_USER_MODEL = 'graduates.Alumni'
 
 # Registration redux settings
 ACCOUNT_ACTIVATION_DAYS=7
+
+# Login settings
+LOGIN_REDIRECT_URL = "/"
